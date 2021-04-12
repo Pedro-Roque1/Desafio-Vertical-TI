@@ -1,13 +1,7 @@
 <?php
 require("cabecalho.php");
-$listaPosts = json_decode(file_get_contents("http://jsonplaceholder.typicode.com/posts"),true);
+$postEncontrado = json_decode(file_get_contents("http://jsonplaceholder.typicode.com/posts/{$_GET['idPost']}"),true);
 
-foreach ($listaPosts as $post){
-
-    if($post['id'] == $_GET['idPost']){
-        $postEncontrado = $post;
-    }
-}    
 ?>
 
 

@@ -1,15 +1,9 @@
 <?php
 require("cabecalho.php");
 
-$listaPosts = json_decode(file_get_contents("http://jsonplaceholder.typicode.com/posts"),true);
+$listaPosts = json_decode(file_get_contents("http://jsonplaceholder.typicode.com/posts?_limit=10"),true);
 
-$cont = sizeof($listaPosts);
- foreach ($listaPosts as $post){
-        	$post['id'] = $cont;
-        	$cont--;
-    		if ($cont<= (sizeof($listaPosts)-12)) {
-				break;
-    		}else{
+foreach ($listaPosts as $post){
 ?>
 		<div class="list-group">
 			  <a href="descricao.php?idPost=<?=$post['id'] ?>" class="list-group-item list-group-item-action" aria-current="true">
@@ -22,7 +16,6 @@ $cont = sizeof($listaPosts);
 		</div>
 		</body>
 <?php
-}
 }
 ?>
 
