@@ -1,6 +1,6 @@
 <?php
 require("cabecalho.php");
-$listaPosts = json_decode(file_get_contents("https://jsonplaceholder.typicode.com/posts"),true);
+$listaPosts = json_decode(file_get_contents("http://jsonplaceholder.typicode.com/posts"),true);
 
 foreach ($listaPosts as $post){
 
